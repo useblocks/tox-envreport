@@ -23,11 +23,9 @@ def tox_runtest_post(venv):
     # Collect paths from current configuration
     # ----------------------------------------
     venv_path = venv.path.strpath
-    # venv_logdir = os.path.join(venv_path, "log")
-    toxworkdir = venv.session.config.toxworkdir.strpath
-    report_path = os.path.join(toxworkdir, "env_report.json")
-    venv_report_path = os.path.join(venv_path,
-                                    "env_report_{0}.json".format(venv.name))
+    tox_workdir = venv.session.config.toxworkdir.strpath
+    tox_report_path = os.path.join(tox_workdir, "tox-report.json")
+    venv_report_path = os.path.join(venv_path, "env-report.json")
 
     # Collect needed data
     # -------------------
@@ -51,7 +49,7 @@ def tox_runtest_post(venv):
     # ToDo: This needs to be done only once! But this hook gets called for
     # each test. Another "global" hook would be great, but tox does not
     # provide anything useful right now.
-    with open(report_path, "w") as report_file:
+    with open(tox_report_path, "w") as report_file:
         report_file.write(data_json)
 
     with open(venv_report_path, "w") as venv_report_file:

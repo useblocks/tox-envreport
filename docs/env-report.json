@@ -1,0 +1,66 @@
+{
+    "host": "daniel-dev",
+    "installed_packages": [
+        "attrs==17.4.0",
+        "more-itertools==4.1.0",
+        "pluggy==0.6.0",
+        "py==1.5.3",
+        "pytest==3.5.0",
+        "six==1.11.0",
+        "tox==3.0.0",
+        "tox-envreport==0.1.0",
+        "virtualenv==15.2.0"
+    ],
+    "installpkg": {
+        "basename": "tox-envreport-0.1.0.zip",
+        "md5": "5046419f076f6fd825319874614a90d0",
+        "sha256": "a410ac82328f6089e7e6ffc826a81a1526c91395a793bee265430c0a9cd7d28e"
+    },
+    "name": "py35",
+    "path": "/home/daniel/workspace/tox-envreport/.tox/py35",
+    "platform": "linux",
+    "python": {
+        "executable": "/home/daniel/workspace/tox-envreport/.tox/py35/bin/python",
+        "version": "3.5.2 (default, Nov 23 2017, 16:37:01) \n[GCC 5.4.0 20160609]",
+        "version_info": [
+            3,
+            5,
+            2,
+            "final",
+            0
+        ]
+    },
+    "reportversion": "1",
+    "setup": [
+        {
+            "command": [
+                "/home/daniel/workspace/tox-envreport/.tox/py35/bin/pip",
+                "install",
+                "-U",
+                "--no-deps",
+                "/home/daniel/workspace/tox-envreport/.tox/dist/tox-envreport-0.1.0.zip"
+            ],
+            "output": "actionid: py35\nmsg: installpkg\ncmdargs: ['/home/daniel/workspace/tox-envreport/.tox/py35/bin/pip', 'install', '-U', '--no-deps', '/home/daniel/workspace/tox-envreport/.tox/dist/tox-envreport-0.1.0.zip']\n\nProcessing ./.tox/dist/tox-envreport-0.1.0.zip\nBuilding wheels for collected packages: tox-envreport\n  Running setup.py bdist_wheel for tox-envreport: started\n  Running setup.py bdist_wheel for tox-envreport: finished with status 'done'\n  Stored in directory: /home/daniel/.cache/pip/wheels/da/40/e3/1954e2a10b42ec16b0a8ecb694e438fc3894a7a3c233810269\nSuccessfully built tox-envreport\nInstalling collected packages: tox-envreport\n  Found existing installation: tox-envreport 0.1.0\n    Uninstalling tox-envreport-0.1.0:\n      Successfully uninstalled tox-envreport-0.1.0\nSuccessfully installed tox-envreport-0.1.0\n",
+            "retcode": "0"
+        },
+        {
+            "command": [
+                "/home/daniel/workspace/tox-envreport/.tox/py35/bin/pip",
+                "freeze"
+            ],
+            "output": "actionid: py35\nmsg: envreport\ncmdargs: ['/home/daniel/workspace/tox-envreport/.tox/py35/bin/pip', 'freeze']\n\nattrs==17.4.0\nmore-itertools==4.1.0\npluggy==0.6.0\npy==1.5.3\npytest==3.5.0\nsix==1.11.0\ntox==3.0.0\ntox-envreport==0.1.0\nvirtualenv==15.2.0\n",
+            "retcode": "0"
+        }
+    ],
+    "test": [
+        {
+            "command": [
+                "/home/daniel/workspace/tox-envreport/.tox/py35/bin/pytest",
+                "tests"
+            ],
+            "output": null,
+            "retcode": "0"
+        }
+    ],
+    "toxversion": "3.0.0"
+}

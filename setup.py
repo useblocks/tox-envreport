@@ -13,9 +13,10 @@ def read(fname):
 
 setup(
     name='tox-envreport',
-    description='A simple plugin to use with tox',
+    description='A tox-plugin to document the setup of used virtual '
+                'environments.',
     long_description=read('README.rst'),
-    version='0.1.1',
+    version='0.2.0',
     author='team useblocks',
     author_email='team@useblocks.com',
     maintainer='team useblocks',

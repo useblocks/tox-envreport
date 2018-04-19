@@ -15,6 +15,7 @@
 import sys
 import os
 import shlex
+import datetime
 
 # If extensions (or modules to document with autodoc) are in another directory,
 # add these directories to sys.path here. If the directory is relative to the
@@ -49,7 +50,8 @@ master_doc = 'index'
 
 # General information about the project.
 project = u'tox-envreport'
-copyright = u'2018, team useblocks'
+now = datetime.datetime.now()
+copyright = '2018, <a href="http://useblocks.com">team useblocks</a>'.format(year=now.year)
 author = u'team useblocks'
 
 # The version info for the project you're documenting, acts as replacement for
@@ -115,7 +117,20 @@ html_theme = 'alabaster'
 # Theme options are theme-specific and customize the look and feel of a theme
 # further.  For a list of options available for each theme, see the
 # documentation.
-#html_theme_options = {}
+html_theme_options = {
+    'logo': 'tox_envreport_logo.png',
+    'logo_name': True,
+    # 'description': "an extension for sphinx",
+    'logo_text_align': "center",
+    'github_user': 'useblocks',
+    'github_repo': 'tox-envreport',
+    'github_banner': True,
+    'github_button': False,
+    'fixed_sidebar': True,
+    'extra_nav_links': {'envreport@PyPi': "https://pypi.python.org/pypi/tox-envreport/",
+                        'envreport@github': "https://github.com/useblocks/tox-envreport",
+                        'envreport@travis': "https://travis-ci.org/useblocks/tox-envreport"}
+}
 
 # Add any paths that contain custom themes here, relative to this directory.
 #html_theme_path = []
@@ -155,7 +170,7 @@ html_static_path = ['_static']
 #html_use_smartypants = True
 
 # Custom sidebar templates, maps document names to template names.
-#html_sidebars = {}
+html_sidebars = {'**': ['about.html', 'navigation.html'], }
 
 # Additional templates that should be rendered to pages, maps page names to
 # template names.
