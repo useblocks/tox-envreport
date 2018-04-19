@@ -15,7 +15,7 @@ setup(
     name='tox-envreport',
     description='A simple plugin to use with tox',
     long_description=read('README.rst'),
-    version='0.1.0',
+    version='0.1.1',
     author='team useblocks',
     author_email='team@useblocks.com',
     maintainer='team useblocks',

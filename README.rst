@@ -18,63 +18,30 @@ tox-envreport
     :target: https://ci.appveyor.com/project/useblocks/tox-envreport/branch/master
     :alt: See Build Status on AppVeyor
 
-A simple plugin to use with tox
+`tox-envreport` is a plugin for `tox <https://tox.readthedocs.io/en/latest/>`_
+to document the setup of used virtual environments.
 
-----
-
-This `Pytest`_ plugin was generated with `Cookiecutter`_ along with `@obestwalter`_'s `Cookiecutter-tox-plugin`_ template.
-
-
-Features
---------
-
-* TODO
-
-
-Requirements
-------------
-
-* TODO
-
+Collected information are stored in a file called ``env_report.json`` inside the `.tox` folder.
+For example: ``MY_PROJECT/.tox/env_report.json``.
 
 Installation
 ------------
-
-You can install "tox-envreport" via `pip`_ from `PyPI`_::
-
-    $ pip install tox-envreport
-
+``pip install tox-envreport``
 
 Usage
 -----
 
-* TODO
+The installation of the plugin is enough to automatically activate it for each tox run.
 
-Contributing
-------------
-Contributions are very welcome. Tests can be run with `tox`_, please ensure
-the coverage at least stays the same before you submit a pull request.
+There is nothing more to do or to configure.
 
-License
--------
+Access reports
+--------------
+`tox-envreport` creates one common ``env_report.json`` file, which contains all information about all used virtual
+environments (venv) by tox.
 
-Distributed under the terms of the `MIT`_ license, "tox-envreport" is free and open source software
+Beside this a venv specific file is generated as well and contains information about the related venv only.
+You can find this file in the venv-specific tox-folder. E.g: ``MY_PROJECT/.tox/py27/env_report_py27.json``
+for a venv called *py27*.
 
-
-Issues
-------
-
-If you encounter any problems, please `file an issue`_ along with a detailed description.
-
-.. _`Cookiecutter`: https://github.com/audreyr/cookiecutter
-.. _`@obestwalter`: https://github.com/obestwalter
-.. _`MIT`: http://opensource.org/licenses/MIT
-.. _`BSD-3`: http://opensource.org/licenses/BSD-3-Clause
-.. _`GNU GPL v3.0`: http://www.gnu.org/licenses/gpl-3.0.txt
-.. _`Apache Software License 2.0`: http://www.apache.org/licenses/LICENSE-2.0
-.. _`cookiecutter-tox-plugin`: https://github.com/tox-dev/cookiecutter-tox-plugin
-.. _`file an issue`: https://github.com/useblocks/tox-envreport/issues
-.. _`pytest`: https://github.com/pytest-dev/pytest
-.. _`tox`: https://tox.readthedocs.io/en/latest/
-.. _`pip`: https://pypi.org/project/pip/
-.. _`PyPI`: https://pypi.org
+The report file itself contains the venv-name as postfix. E.g.: ``env_report_py27.json``.
