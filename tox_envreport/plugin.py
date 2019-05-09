@@ -1,9 +1,11 @@
 # -*- coding: utf-8 -*-
 import logging
 import os
-
+from packaging import version
 import pluggy
 import json
+import tox
+
 
 hookimpl = pluggy.HookimplMarker("tox")
 log = logging.getLogger('envreport')
@@ -23,7 +25,11 @@ def tox_runtest_post(venv):
     # Collect paths from current configuration
     # ----------------------------------------
     venv_path = venv.path.strpath
-    tox_workdir = venv.session.config.toxworkdir.strpath
+
+    if version.parse(tox.__version__) < version.parse('3.8.0'):  # tox  < 3.8.0
+        tox_workdir = venv.session.config.toxworkdir.strpath
+    else:
+        tox_workdir = venv.path
     tox_report_path = os.path.join(tox_workdir, "tox-report.json")
     venv_report_path = os.path.join(venv_path, "env-report.json")
 
@@ -68,10 +74,16 @@ def collect_data(current_venv):
         "name": current_venv.name,
         "path": current_venv.path.strpath,
     }
-    data[current_venv.name].update(current_venv.session.resultlog.dict)
+    if version.parse(tox.__version__) < version.parse('3.8.0'):  # tox  < 3.8.0
+        data[current_venv.name].update(current_venv.session.resultlog.dict)
+    else:
+        data[current_venv.name].update(current_venv.env_log.reportlog.dict)
 
     data[current_venv.name].pop("testenvs", None)
-    data[current_venv.name].update(
-        current_venv.session.resultlog.dict["testenvs"][current_venv.name])
-
+    if version.parse(tox.__version__) < version.parse('3.8.0'):  # tox  < 3.8.0
+        data[current_venv.name].update(
+            current_venv.session.resultlog.dict["testenvs"][current_venv.name])
+    else:
+        data[current_venv.name].update(
+            current_venv.env_log.reportlog.dict["testenvs"][current_venv.name])
     return data

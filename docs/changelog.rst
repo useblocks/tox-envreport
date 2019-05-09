@@ -1,6 +1,11 @@
 Changelog
 =========
 
+0.2.1
+-----
+
+* Bugfix: Support for tox >= 3.8.0 (`#3 <https://github.com/useblocks/tox-envreport/issues/3>`_)
+
 0.2.0
 -----
 
