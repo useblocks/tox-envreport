@@ -21,7 +21,7 @@ setup(
     author_email='team@useblocks.com',
     maintainer='team useblocks',
     maintainer_email='team@useblocks.com',
-    url='https://github.com/useblocks/tox-envreport',
+    url='https://tox-envreport.readthedocs.io',
     packages=find_packages(),
     python_requires='>=2.7, !=3.0.*, !=3.1.*, !=3.2.*, !=3.3.*',
     install_requires=['tox>=3.0.0'],

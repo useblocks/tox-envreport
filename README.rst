@@ -14,15 +14,15 @@ tox-envreport
     :target: https://travis-ci.org/useblocks/tox-envreport
     :alt: See Build Status on Travis CI
 
-.. image:: https://ci.appveyor.com/api/projects/status/github/useblocks/tox-envreport?branch=master
-    :target: https://ci.appveyor.com/project/useblocks/tox-envreport/branch/master
-    :alt: See Build Status on AppVeyor
+
 
 `tox-envreport` is a plugin for `tox <https://tox.readthedocs.io/en/latest/>`_
 to document the setup of used virtual environments.
 
 Collected information are stored in a file called ``env_report.json`` inside the `.tox` folder.
 For example: ``MY_PROJECT/.tox/env_report.json``.
+
+**Documentation**: https://tox-envreport.readthedocs.io/en/latest/
 
 Installation
 ------------
